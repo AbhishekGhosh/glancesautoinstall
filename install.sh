@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 #
 # GlancesAutoInstall script
-# Version: Glances 2.8
-# Author:  Nicolas Hennion (aka) Nicolargo
-#
+# Version: Glances 3.0
+# Author: Abhishek Ghosh 
+# Forked from Nicolas Hennion (aka) Nicolargo
 
 # Execute a command as root (or sudo)
 do_with_root() {
@@ -32,8 +32,8 @@ else
             distrib_name=${BASH_REMATCH[1]}
             break
         else
-            echo "Sorry, GlancesAutoInstall script is not compliant with your system."
-            echo "Please read: https://github.com/nicolargo/glances#installation"
+            echo "Sorry, Dr. Abhishek Ghosh's Glances AutoI nstall script is NOT compliant with your system."
+            echo "Please read their official document: https://github.com/nicolargo/glances#installation"
             exit 1
         fi
     done
@@ -86,7 +86,7 @@ shopt -u nocasematch
 echo "Install dependancies"
 
 # Glances issue #922: Do not install PySensors (SENSORS)
-DEPS="setuptools glances[action,batinfo,browser,cpuinfo,chart,docker,export,folders,gpu,ip,raid,snmp,web,wifi]"
+DEPS="setuptools glances[action,batinfo,cpuinfo,chart,export,folders,ip,raid,snmp]"
 
 # Install libs
 do_with_root pip install --upgrade pip
